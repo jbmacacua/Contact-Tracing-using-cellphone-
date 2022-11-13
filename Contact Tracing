@@ -1,0 +1,62 @@
+#Display menu
+print("            _____________________")
+print("            |                    |")
+print("            |        Menu        |")
+print("            |                    |")
+print("            |____________________|")
+print("            |                    |")
+print("            |  1 -> Add an item  |")
+print("            |  2 -> Search       |")
+print("            |  3 -> Exit(y/n)    |")
+print("            |                    |")
+print("            |____________________|\n")
+print("\n             HELLO USER, WELCOME!       ")
+print("           =======================\n")
+
+#Add an item
+user_infos = {}
+while True:
+    choice_num = int(input("What do you want to do?: "))
+    if choice_num == 1:
+        print("\n-------------ADDING AN ITEM------------\n")
+        name = input("Enter your full name: ")
+        age = str(input("Enter your age: "))
+        contact_num = str(input("Enter your contact number: "))
+        address = input("Enter your address: ")
+        fb = input("Enter your Facebook account:  ")
+        gmail = input("Enter your gmail account: ")
+        vax =input("Are you fully vaccinated?(y/s): ")
+        person_info = { name: {"Age" : age,
+        "Contact_number" : contact_num, 
+        "Address" : address,
+        "Facebook_account" : fb,
+        "Gmail_account" : gmail,
+        "Fully_Vaccinated" : vax,
+        }
+        }
+        user_infos.update(person_info)
+        print("\n**** Your informations are now added! **** \n          ****Thank you!****\n")
+        print("---------------------------------------\n")
+        
+#Search Contact
+    if choice_num == 2:
+        print("\n-----------------SEARCH-----------------\n")
+        person_info = input("Enter the full name of the person you want to search: ")
+        if person_info in user_infos:
+            print("Fullname: ", name)
+            print("Age: %s"% user_infos[person_info]["Age"])
+            print("Contact number: %s"% user_infos[person_info]["Contact_number"])
+            print("Address: ", user_infos[person_info]["Address"])
+            print("Facebook account: ", user_infos[person_info]["Facebook_account"])
+            print("Gmail account: ", user_infos[person_info]["Gmail_account"])
+            print("Fully vaccinated: ", user_infos[person_info]["Fully_Vaccinated"])
+            print()
+            print("----------------------------------------\n")
+           
+#Exit           
+    if choice_num == 3:
+        print("\n------------------EXIT------------------\n")
+        exit = input("Are you sure you want to exit the program?(y/n): ")
+        if exit == "y":
+            print("\nThank you for running the program! \n        Have a great day! ")
+            break
